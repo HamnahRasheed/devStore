@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uibasic/login_screen.dart';
+import 'package:uibasic/my_button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -38,21 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),),
             ],),
           SizedBox(height: 40),
-          Container(
-            height: 50, width: 250,
-            decoration: BoxDecoration(
-              color: Colors.green,
-              borderRadius: BorderRadius.circular(10),),
-            child: Center(
-              child: TextButton(
-                onPressed: () {Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => LoginScreen()),); },
-                child: Text('Log Out',
-                  style: TextStyle(
-                    fontSize: 24, fontFamily: 'Inter-Bold',
-                    color: Colors.white,
-                  ),),),
-            ),),
+          MyButton(btn: 'Log Out', destination: LoginScreen(),),
         ],),
     );
   }

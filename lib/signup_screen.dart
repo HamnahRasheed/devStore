@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uibasic/home_screen.dart';
 import 'package:uibasic/login_screen.dart';
+import 'package:uibasic/my_button.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -115,23 +116,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),),),
               ),
               SizedBox(height: 50),
-              Container(
-                height: 50, width: 250,
-                decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Center(
-                  child: TextButton(
-                    onPressed: () {Navigator.push(
-                        context, MaterialPageRoute(builder: (context) => HomeScreen()),);
-                    },
-                    child: Text('Sign Up',
-                      style: TextStyle(
-                        fontSize: 24, fontFamily: 'Inter-Bold',
-                        color: Colors.white,
-                      ),),),
-                ),),
+              MyButton(btn: 'Sign Up',destination: HomeScreen(),),
               SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
