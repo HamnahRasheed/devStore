@@ -116,7 +116,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),),),
               ),
               SizedBox(height: 50),
-              MyButton(btn: 'Sign Up',destination: HomeScreen(),),
+              MyButton(btn: 'Sign Up',destination: HomeScreen()),
               SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

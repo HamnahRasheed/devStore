@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),),
             ],),
           SizedBox(height: 40),
-          MyButton(btn: 'Log Out', destination: LoginScreen(),),
+          MyButton(btn: 'Log Out', destination: LoginScreen()),
         ],),
     );
   }

@@ -108,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               SizedBox(height: 150),
-              MyButton(btn: 'Log In', destination: HomeScreen()),
+              MyButton(btn: 'Log In', destination: HomeScreen(),),
               SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

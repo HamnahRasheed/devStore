@@ -30,7 +30,7 @@ class _SplashscreenState extends State<Splashscreen> {
         body: SafeArea(
           child: Center(
               child: Image(
-                  image: AssetImage('images/logo.jpeg')
+                  image: AssetImage('images/logo.jpeg'),
               )
           ),
         ),
