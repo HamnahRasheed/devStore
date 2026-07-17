@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'login_screen.dart';
+import 'package:uibasic/home_screen.dart';
+
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
-
   @override
   State<Splashscreen> createState() => _SplashscreenState();
 }
@@ -12,11 +12,10 @@ class _SplashscreenState extends State<Splashscreen> {
   @override
   void initState() {
     super.initState();
-
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const LoginScreen()),
+        MaterialPageRoute(builder: (context) => const HomeScreen()),
       );
     });
   }
@@ -28,11 +27,7 @@ class _SplashscreenState extends State<Splashscreen> {
       home: Scaffold(
         backgroundColor: Colors.black,
         body: SafeArea(
-          child: Center(
-              child: Image(
-                  image: AssetImage('images/logo.jpeg'),
-              )
-          ),
+          child: Center(child: Image(image: AssetImage('images/devStore.png'))),
         ),
       ),
     );
