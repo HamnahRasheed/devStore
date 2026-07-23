@@ -1,4 +1,4 @@
-# uibasic
+# DevStore
 
 A new Flutter project.
 
