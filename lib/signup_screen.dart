@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:uibasic/home_screen.dart';
-import 'package:uibasic/login_screen.dart';
-import 'package:uibasic/my_button.dart';
+import 'package:dev_store/home_screen.dart';
+import 'package:dev_store/login_screen.dart';
+import 'package:dev_store/my_button.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});

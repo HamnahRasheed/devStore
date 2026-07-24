@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:uibasic/home_screen.dart';
+import 'package:dev_store/home_screen.dart';
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
@@ -17,8 +17,7 @@ class _SplashscreenState extends State<Splashscreen> {
         context,
         MaterialPageRoute(builder: (context) => const HomeScreen()),
       );
-    });
-  }
+    });}
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +27,5 @@ class _SplashscreenState extends State<Splashscreen> {
         backgroundColor: Colors.black,
         body: SafeArea(
           child: Center(child: Image(image: AssetImage('images/devStore.png'))),
-        ),
-      ),
-    );
-  }
-}
+        ),),
+    );}}

@@ -1,4 +1,4 @@
-package com.example.uibasic
+package com.example.dev_store
 
 import io.flutter.embedding.android.FlutterActivity
 

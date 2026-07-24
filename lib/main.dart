@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'splash_screen.dart';
+import 'package:provider/provider.dart';
+import 'Provider/cart_provider.dart';
+import 'Provider/product_provider.dart';
+import 'home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,10 +13,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Main UI',
-      home:  Splashscreen(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ProductProvider()),
+        ChangeNotifierProvider(create: (_) => CartProvider()),
+      ],
+      child: MaterialApp(
+        title: 'DevStore',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(fontFamily: 'Inter-Bold'),
+        home: const HomeScreen(),
+      ),
     );
   }
 }
