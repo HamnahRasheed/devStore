@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import '../Model/store_model.dart';
+import 'package:dev_store/Model/store_model.dart'; // Adjust import if needed
 
 class CartItem {
   final StoreModel product;
   int quantity;
+
   CartItem({required this.product, this.quantity = 1});
 }
 
 class CartProvider with ChangeNotifier {
   final Map<int, CartItem> _items = {};
+
   Map<int, CartItem> get items => _items;
 
   int get itemCount {
@@ -29,29 +31,36 @@ class CartProvider with ChangeNotifier {
 
   void addToCart(StoreModel product) {
     if (product.id == null) return;
-    if (_items.containsKey(product.id)) {
+    final int productId = product.id!.toInt();
+
+    if (_items.containsKey(productId)) {
       _items.update(
-        product.id!.toInt(),
-        (existingItem) => CartItem(
+        productId,
+            (existingItem) => CartItem(
           product: existingItem.product,
           quantity: existingItem.quantity + 1,
         ),
       );
     } else {
       _items.putIfAbsent(
-        product.id!.toInt(),
-        () => CartItem(product: product, quantity: 1),
+        productId,
+            () => CartItem(product: product, quantity: 1),
       );
     }
     notifyListeners();
   }
 
-  void removeSingleItem(int productId) {
+  // Accepts product directly (No null error possible!)
+  void removeSingleItem(StoreModel product) {
+    if (product.id == null) return;
+    final int productId = product.id!.toInt();
+
     if (!_items.containsKey(productId)) return;
+
     if (_items[productId]!.quantity > 1) {
       _items.update(
         productId,
-        (existing) => CartItem(
+            (existing) => CartItem(
           product: existing.product,
           quantity: existing.quantity - 1,
         ),
@@ -62,7 +71,9 @@ class CartProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void removeItem(int productId) {
+  void removeItem(StoreModel product) {
+    if (product.id == null) return;
+    final int productId = product.id!.toInt();
     _items.remove(productId);
     notifyListeners();
   }
