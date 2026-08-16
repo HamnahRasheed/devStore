@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class MyButton extends StatelessWidget {
   final String btn;
   final VoidCallback onPressed;
-  //final Widget destination;
   const MyButton({super.key, required this.btn, required this.onPressed});
 
   @override
@@ -21,10 +20,8 @@ class MyButton extends StatelessWidget {
           style: TextStyle(
             fontSize: 24,
             fontFamily: 'Inter-Bold',
-            color: Colors.white,
-          ),
-        ),
-      ),
+            color: Colors.white, ),
+        ), ),
     );
   }
 }

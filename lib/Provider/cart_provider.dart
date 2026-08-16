@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:dev_store/Model/store_model.dart'; // Adjust import if needed
+import 'package:dev_store/Model/store_model.dart';
 
 class CartItem {
   final StoreModel product;
@@ -50,7 +50,6 @@ class CartProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  // Accepts product directly (No null error possible!)
   void removeSingleItem(StoreModel product) {
     if (product.id == null) return;
     final int productId = product.id!.toInt();

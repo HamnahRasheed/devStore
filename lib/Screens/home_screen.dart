@@ -10,14 +10,12 @@ import 'login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController _searchController = TextEditingController();
-
   @override
   void initState() {
     super.initState();
@@ -34,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: const Color(0xff121212),
         elevation: 0,
-        automaticallyImplyLeading: false, // Prevents stray back arrows
+        automaticallyImplyLeading: false,
         title: Padding(
           padding: const EdgeInsets.only(left: 10.0),
           child: Row(
@@ -61,7 +59,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         actions: [
-          // Shopping Bag Badge
           Consumer<CartProvider>(
             builder: (context, cart, child) {
               return GestureDetector(
@@ -87,11 +84,9 @@ class _HomeScreenState extends State<HomeScreen> {
             },
           ),
           const SizedBox(width: 15),
-
-          // Logout Button
           IconButton(
-            icon: const Icon(Icons.logout, color: Colors.redAccent),
             tooltip: 'Logout',
+            icon: const Icon(Icons.logout, color: Colors.redAccent),
             onPressed: () async {
               await context.read<AuthProvider>().logout();
               if (context.mounted) {
@@ -120,9 +115,9 @@ class _HomeScreenState extends State<HomeScreen> {
               decoration: InputDecoration(
                 hintText: 'Search Products...',
                 hintStyle: const TextStyle(
+                  color: Colors.grey,
                   fontFamily: 'Inter-Light',
                   fontSize: 18,
-                  color: Colors.grey,
                 ),
                 prefixIcon: const Icon(Icons.search, color: Colors.grey),
                 filled: true,
@@ -199,7 +194,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: CircularProgressIndicator(color: Colors.green),
                     );
                   }
-
                   final products = productProvider.filteredProducts;
                   return GridView.builder(
                     gridDelegate:

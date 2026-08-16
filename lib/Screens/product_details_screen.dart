@@ -15,7 +15,10 @@ class ProductDetailsScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xff121212),
         iconTheme: const IconThemeData(color: Colors.white),
-        title: const Text('Product Details', style: TextStyle(color: Colors.white)),
+        title: const Text(
+          'Product Details',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
@@ -26,43 +29,92 @@ class ProductDetailsScreen extends StatelessWidget {
               child: Container(
                 height: 250,
                 padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(color: const Color(0xff1E1E1E), borderRadius: BorderRadius.circular(20)),
+                decoration: BoxDecoration(
+                  color: const Color(0xff1E1E1E),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 child: Image.network(product.image ?? '', fit: BoxFit.contain),
               ),
             ),
             const SizedBox(height: 20),
-            Text(product.title ?? '', style: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold)),
+            Text(
+              product.title ?? '',
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('\$${product.price?.toStringAsFixed(2)}', style: const TextStyle(color: Colors.green, fontSize: 24, fontWeight: FontWeight.bold)),
+                Text(
+                  '\$${product.price?.toStringAsFixed(2)}',
+                  style: const TextStyle(
+                    color: Colors.green,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 Row(
                   children: [
                     const Icon(Icons.star, color: Colors.amber),
                     const SizedBox(width: 4),
-                    Text('${product.rating?.rate} (${product.rating?.count})', style: const TextStyle(color: Colors.white)),
+                    Text(
+                      '${product.rating?.rate} (${product.rating?.count})',
+                      style: const TextStyle(color: Colors.white),
+                    ),
                   ],
                 ),
               ],
             ),
             const SizedBox(height: 20),
-            const Text('Description', style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+            const Text(
+              'Description',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             const SizedBox(height: 8),
-            Text(product.description ?? '', style: const TextStyle(color: Colors.grey, fontSize: 15, height: 1.4)),
+            Text(
+              product.description ?? '',
+              style: const TextStyle(
+                color: Colors.grey,
+                fontSize: 15,
+                height: 1.4,
+              ),
+            ),
             const SizedBox(height: 30),
             SizedBox(
               width: double.infinity,
               height: 50,
               child: ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.green, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
                 onPressed: () {
                   context.read<CartProvider>().addToCart(product);
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Added to Cart!'), backgroundColor: Colors.green),
+                    const SnackBar(
+                      content: Text('Added to Cart!'),
+                      backgroundColor: Colors.green,
+                    ),
                   );
                 },
-                child: const Text('Add To Cart', style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                child: const Text(
+                  'Add To Cart',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ),
           ],

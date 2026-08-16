@@ -1,18 +1,13 @@
+import 'package:dev_store/Screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dev_store/Provider/product_provider.dart';
 import 'package:dev_store/Provider/cart_provider.dart';
 import 'package:dev_store/Provider/auth_provider.dart';
-import 'home_screen.dart';
-import 'login_screen.dart';
-
 void main() {
-  runApp(const MyApp());
-}
-
+  runApp(const MyApp());}
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -27,11 +22,6 @@ class MyApp extends StatelessWidget {
             title: 'DevStore',
             debugShowCheckedModeBanner: false,
             theme: ThemeData(fontFamily: 'Inter-Bold'),
-            // Automatically opens HomeScreen if already logged in!
-            home: auth.isLoggedIn ? const HomeScreen() : const LoginScreen(),
-          );
-        },
-      ),
-    );
-  }
-}
+            home: SplashScreen(), );},
+      ),);
+  }}

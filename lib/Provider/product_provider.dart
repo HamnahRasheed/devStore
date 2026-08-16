@@ -49,7 +49,6 @@ class ProductProvider with ChangeNotifier {
         List<dynamic> data = jsonDecode(response.body);
         _productList = data.map((item) => StoreModel.fromJson(item)).toList();
 
-        // Extract unique categories cleanly
         Set<String> uniqueCategories = {'All'};
         for (var product in _productList) {
           if (product.category != null && product.category!.isNotEmpty) {
